@@ -45,7 +45,6 @@
             }
         },
         created(){
-            this.contactId = this.$route.params.id;
             this.getContacts();
         },
         methods: {
@@ -59,12 +58,9 @@
             },
             deleteContact(contactId) {
                 let url = `http://127.0.0.1:8000/api/DeleteContact/${contactId}`;
-                const response = axios.get(url);
+                axios.get(url);
                 this.conatctsData = this.conatctsData.filter(contact => contact.id !== contactId); 
             },
-            updateContact(contactId){
-
-            }
         },
         mounted(){
         }
